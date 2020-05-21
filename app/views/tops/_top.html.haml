@@ -1,0 +1,25 @@
+.header
+  .header-box
+    .header-left
+      .header-left__title
+        タイトル
+      
+    .header-right
+      .header-right__name
+        = current_user.name
+      .header-right__btn
+        = link_to edit_user_path(current_user), class: "header-right__btn-icon" do
+          = icon('fas', 'cog', class: "icon")
+.content
+  .content-list
+    = link_to "#", class: "list-btn content-list__btn-directed" do
+      %span<>
+      指示書
+    = link_to "#", class: "list-btn content-list__btn-message" do
+      %span<>
+      チャット
+    = link_to "#", class: "list-btn content-list__btn-shift" do
+      %span<>
+      勤怠管理
+.footer
+
