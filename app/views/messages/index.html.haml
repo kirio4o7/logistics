@@ -22,5 +22,16 @@
     = link_to "#", class: "list-btn content-list__btn-shift" do
       %span<>
       勤怠管理
--# .footer
+
+.message-box
+  = render @messages
+
+.footer
+  = form_for @message do |f|
+    = f.text_field :text, class: 'form__message', placeholder: 'type a message'
+    .form-message__mask
+      = f.label :image, class: 'form-message__mask-image' do
+        = icon('fas', 'image', class: 'icon')
+        = f.file_field :image, class: 'text'
+    = f.submit '送信', class: 'form__btn'
 

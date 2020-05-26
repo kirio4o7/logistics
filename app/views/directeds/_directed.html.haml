@@ -1,0 +1,14 @@
+.content-box
+  .content-box__directeds
+    - @directeds.each do |directed|
+      .content-box__directeds-title
+        = directed.text
+        .content-box__directeds-url
+          = directed.image
+        .content-box__directeds-data
+          = directed.created_at.strftime("%Y年%m月%d日 %H時%M分")
+        .content-box__directeds-name
+          投稿者: 
+          = current_user.name
+      
+  

@@ -22,5 +22,18 @@
     = link_to "#", class: "list-btn content-list__btn-shift" do
       %span<>
       勤怠管理
--# .footer
 
+.content-box
+  = render @directeds
+
+
+.footer
+  = form_for @directed do |f|
+    = f.text_field :text, class: 'form__directed', placeholder: 'タイトルを入力してください'
+    .form__mask
+      = f.label :image, class: 'form__mask-image' do
+        = icon('fas', 'image', class: 'icon')
+        = f.file_field :image, class: 'hidden'
+    = f.submit '登録', class: 'form__submit'
+
+= paginate @directeds
